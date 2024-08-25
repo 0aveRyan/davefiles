@@ -2,6 +2,8 @@
 
 This repository contains my personal dotfiles, managed using [Chezmoi](https://www.chezmoi.io/). These configuration files set up my development environment with various tools and customizations.
 
+They don't include my [Setapp](https://setapp.com) rig, I just hit the favorite heart and download 🤷‍♂️
+
 ## Overview
 
 - Shell: Zsh with Oh My Zsh
