@@ -1,0 +1,45 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Load Powerlevel10k theme before Oh My Zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# Oh My Zsh configuration
+zstyle :omz:plugins:iterm2 shell-integration yes
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(
+    1password
+    brew
+    command-not-found
+    composer
+    eza
+    fzf
+    git
+    gh
+    iterm2
+    httpie
+    laravel
+    npm
+    nvm
+    rust
+    sudo
+    svn
+    vscode
+    wp-cli
+    yarn
+)
+
+# Source additional configuration files
+for config_file in ~/.zsh_aliases ~/.zsh_functions ~/.zsh_exports; do
+  if [[ -f "$config_file" ]]; then
+    source "$config_file"
+  fi
+done
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
